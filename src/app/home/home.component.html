@@ -1,0 +1,15 @@
+
+<br/>
+<div class="card-deck m-5">
+  <div class="card" *ngFor="let c of products">
+    <img class="card-img-top" src="https://i.pinimg.com/474x/94/dd/57/94dd573e4b4de604ea7f33548da99fd6--d-nature-wallpaper-hd-wallpaper.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{c.productName}}</h5>
+      <p class="card-text">{{c.details}}</p>
+      <p class="card-text"><small class="text-muted">{{c.price}}</small></p>
+      <div class="card-text">
+        <button class="btn btn-primary" (click)="addtoCart({productId: c.id})">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

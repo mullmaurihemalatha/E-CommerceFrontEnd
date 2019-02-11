@@ -1,0 +1,15 @@
+h2{
+  text-align: center;
+  text-decoration: bold;
+}
+label{
+  left:0;
+  width: 100px;
+
+
+}
+
+input{
+  right:0;
+  margin: 1% 0%;
+}

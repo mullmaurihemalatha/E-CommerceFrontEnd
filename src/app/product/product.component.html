@@ -1,0 +1,54 @@
+<div class="contianer">
+<h2>Add Product</h2>
+
+<form class="form-inline container justify-content-center" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="jumbotron">
+    <div>
+      <ng-select [items]="category"
+                    bindLabel="name"
+                    bindValue="id"
+                    placeholder="Select cities"
+                    [(ngModel)]="selectedCityIds">
+      </ng-select>
+    </div>
+    <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" formControlName="productName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productName.errors }" />
+        <div *ngIf="submitted && f.productName.errors" class="invalid-feedback">
+            <div *ngIf="f.productName.errors.required">Product Name  is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="details">Details</label>
+        <input type="text" formControlName="details" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.details.errors }" />
+        <div *ngIf="submitted && f.details.errors" class="invalid-feedback">
+            <div *ngIf="f.details.errors.required">Details is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+        <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+            <div *ngIf="f.price.errors.required">Price is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="code">Code</label>
+        <input type="text" formControlName="code" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.code.errors }" />
+        <div *ngIf="submitted && f.code.errors" class="invalid-feedback">
+            <div *ngIf="f.code.errors.required">Code is required</div>
+            <!-- <div *ngIf="f.code.errors.minlength">Password must be at least 6 characters</div> -->
+        </div>
+    </div>
+    <br/>
+    <div class="form-group justify-content-center align-items-center">
+      <div class="row ">
+        <input type="button" [disabled]="loading" class="col-md-6 form-control btn btn-primary" value="Add Product"/>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a routerLink="/home" class="btn btn-link col-md-6 ">Cancel</a>
+        </div>
+    </div>
+    </div>
+</form>
+
+</div>
